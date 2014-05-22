@@ -14,8 +14,6 @@ def push():
     local('git push origin master')
 
 def deploy():
-    remote_dir = "/var/www/ptphp.com"
+    remote_dir = "/var/www/theme.ptphp.com"
     with cd(remote_dir):
         run("git pull origin master")
-        run("composer update")
-        run("chmod -R 777 ./Data")
