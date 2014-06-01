@@ -33,7 +33,7 @@ h6,
 .h4,
 .h5,
 .h6 {
-  font-family: 'Open Sans', sans-serif;
+  font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 300;
 }
 a {
@@ -637,7 +637,7 @@ body.modal-open,
 .page-head h2 {
   margin-bottom: 5px;
   margin-top: 6px;
-  font-family: 'Open Sans', sans-serif;
+  font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 300;
   letter-spacing: -1px;
 }
@@ -2314,7 +2314,7 @@ div.dataTables_length label select {
   color: #333333;
   cursor: pointer;
   display: inline-block;
-  font-family: 'Open Sans', Verdana, sans-serif;
+  font-family:"Helvetica Neue", Helvetica, Arial, sans-serif, Verdana, sans-serif;
   font-size: 11px;
   margin-right: 1.8%;
   margin-bottom: 15px;
@@ -2699,7 +2699,7 @@ div.dataTables_length label select {
 }
 .block .content h2,
 .widget-block .content h2 {
-  font-family: 'Open Sans', sans-serif;
+  font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .block .header h2,
 .widget-block .header h2,
@@ -4863,7 +4863,7 @@ button::-moz-focus-inner {
   background: transparent;
 }
 .gritter-item {
-  font-family: 'Open Sans', sans-serif;
+  font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
   background: transparent;
   color: #FFF;
   padding: 2px 20px 12px;

@@ -5979,11 +5979,11 @@ body,
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  font-family: 'Open Sans', serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif, serif;
 }
 body {
   background: none repeat scroll 0 0 #f4f4f4;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif, sans-serif;
   font-weight: 300;
   font-size: 14px;
 }
@@ -5993,7 +5993,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif, sans-serif;
   font-weight: 600;
 }
 a:active,

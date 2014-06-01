@@ -6454,7 +6454,7 @@ fieldset[disabled] .btn-yellow.active {
 #content .content-title {
   color: #666666;
   display: block;
-  font-family: 'Open Sans';
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 30px;
   font-weight: 300;
   letter-spacing: -1px;
@@ -6538,7 +6538,7 @@ fieldset[disabled] .btn-yellow.active {
   min-height: 30px;
 }
 .box .box-title h4 {
-  font-family: 'Open Sans';
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   display: inline-block;
   font-size: 18px;
   font-weight: 400;
@@ -8989,7 +8989,7 @@ ul.stats li small {
   right: 3px !important;
 }
 .gritter-title {
-  font-family: 'Open Sans';
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 18px;
   font-weight: 300;
 }
