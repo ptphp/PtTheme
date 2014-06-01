@@ -53,12 +53,12 @@
 									</div>
 								</li>
 							</ul>
-						
+
 				</div>
 			</div>
 			<div class="row-fluid no-margin">
 				<div class="span12">
-					
+
 							<ul class="quicktasks">
 								<li>
 									<a href="#">
@@ -155,7 +155,7 @@
 										<ul class="dropdown-menu pull-right custom">
 											<li>
 												<a href="#" class='fugue'><img src="/static/theme/neat/img/icons/fugue/printer.png" alt=""> Print chart</a>
-											</li>	
+											</li>
 											<li class="divider"></li>
 											<li>
 												<a href="#" class='fugue'><img src="/static/theme/neat/img/icons/fugue/gear.png" alt=""> Chart settings</a>
@@ -170,7 +170,7 @@
 											<img src="/static/theme/neat/img/icons/fugue/disk-black.png" alt="">
 										</a>
 									</li>
-								</ul>	
+								</ul>
 							</div>
 						</div>
 						<div class="box-content">
@@ -531,9 +531,9 @@
 					</div>
 				</div>
 			</div>
-		</div>	
+		</div>
 	</div>
-</div>	
+</div>
 <script src="/static/theme/neat/js/jquery.js"></script>
 <script src="/static/theme/neat/js/bootstrap.min.js"></script>
 <script src="/static/theme/neat/js/jquery.peity.js"></script>

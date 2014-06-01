@@ -9,6 +9,12 @@ class Index{
 		include View('theme/cleanzone/'.$cat);
 	}
 }
+class Module{
+    function get(){
+        $name = isset($_GET['name'])?$_GET['name']:"dashboard";
+        include View('theme/cleanzone/module/'.$name);
+    }
+}
 
 class Tools{
     function get(){

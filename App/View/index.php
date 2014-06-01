@@ -1,14 +1,16 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-cn">
 <head>
     <meta charset="utf-8">
     <title>PtPHP - PHP framework</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" href="/static/theme/neat/css/bootstrap.css">
-    <link rel="stylesheet" href="/static/theme/neat/css/bootstrap-responsive.css">
-    <link rel="stylesheet" href="/static/theme/neat/css/jquery.fancybox.css">
-    <link rel="stylesheet" href="/static/theme/neat/css/style.css">
+    <?php Html::link_statics("theme/neat",array(
+        "css/bootstrap.css",
+        "css/bootstrap-responsive.css",
+        "css/jquery.fancybox.css",
+        "css/style.css",
+    ))?>
 </head>
 <body class="wood">
 <?php include View("block/front/topbar");?>
@@ -32,22 +34,21 @@
             </div>
         </div>
     </div>
-
-
-
 </div>
 </div>
 </div>
 <?php include View("block/front/footer");?>
-<script src="/static/theme/neat/js/jquery.js"></script>
-<script src="/static/theme/neat/js/bootstrap.min.js"></script>
-<script src="/static/theme/neat/js/jquery.peity.js"></script>
-<script src="/static/theme/neat/js/jquery.fancybox.js"></script>
-<script src="/static/theme/neat/js/jquery.flot.js"></script>
-<script src="/static/theme/neat/js/jquery.color.js"></script>
-<script src="/static/theme/neat/js/jquery.flot.resize.js"></script>
-<script src="/static/theme/neat/js/jquery.cookie.js"></script>
-<script src="/static/theme/neat/js/custom.js"></script>
-<script src="/static/theme/neat/js/demo.js"></script>
+<?php Html::script_statics("theme/neat",array(
+    "js/jquery.js",
+    "js/bootstrap.min.js",
+    "js/jquery.peity.js",
+    "js/jquery.fancybox.js",
+    "js/jquery.flot.js",
+    "js/jquery.color.js",
+    "js/jquery.flot.resize.js",
+    "js/jquery.cookie.js",
+    "js/custom.js",
+    "js/demo.js",
+))?>
 </body>
 </html>

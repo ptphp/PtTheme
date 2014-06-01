@@ -7,6 +7,9 @@
 html {
   height: 100%;
 }
+.user-select{
+    -webkit-user-select:initial;
+}
 body {
   position: relative;
   padding: 0;
@@ -16,6 +19,7 @@ body {
   color: #555;
   opacity: 0;
   margin-left: -20px;
+    -webkit-user-select: none;
 }
 h1,
 h2,

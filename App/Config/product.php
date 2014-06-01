@@ -1,5 +1,7 @@
 <?php
 $config['debug'] = FALSE;
+$config['static_url']= "http://theme.ptphp.com/static";
+$config['version']= "0.0.1";
 $config['namespaces']= array();
 $config['db']["mysql"] = array(
     'default'=>array(
