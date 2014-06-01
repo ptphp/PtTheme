@@ -91,9 +91,9 @@
         });
     }
     jQuery(document).ready(function() {
-        $("#search-bar a").click(function(){
+        $("#sidebar a").click(function(){
             var href = $(this).attr("href");
-            if(href == "#"){
+            if(href == "#" || href=="javascript:;"){
                 return true;
             }else{
                 get_main_content(href);
