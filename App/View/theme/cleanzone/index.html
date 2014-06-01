@@ -13,21 +13,12 @@
 <?php Html::link_statics("theme/cleanzone",array(
     "js/bootstrap/dist/css/bootstrap.css",
     "fonts/font-awesome-4/css/font-awesome.min.css",
-    "js/jquery.gritter/css/jquery.gritter.css",
-    "js/jquery.nanoscroller/nanoscroller.css",
-    "js/jquery.easypiechart/jquery.easy-pie-chart.css",
-    "js/bootstrap.switch/bootstrap-switch.css",
-    "js/bootstrap.datetimepicker/css/bootstrap-datetimepicker.min.css",
-    "js/jquery.select2/select2.css",
-    "js/bootstrap.slider/css/slider.css",
-    "js/intro.js/introjs.css",
     "css/style.css",
 ))?>
 </head>
 <body>
   <!-- Fixed navbar -->
   <?php include View("theme/cleanzone/block/head-nav")?>
-
 	<div id="cl-wrapper" class="fixed-menu">
         <?php include View("theme/cleanzone/block/sider-bar")?>
 		<div class="container-fluid user-select" id="pcont">
@@ -36,19 +27,7 @@
 	</div>
 <?php Html::script_statics("theme/cleanzone",array(
     "js/jquery.js",
-    "js/jquery.gritter/js/jquery.gritter.js",
-    "js/jquery.nanoscroller/jquery.nanoscroller.js",
     "js/behaviour/general.js",
-    "js/jquery.ui/jquery-ui.js",
-    "js/jquery.sparkline/jquery.sparkline.min.js",
-    "js/jquery.easypiechart/jquery.easy-pie-chart.js",
-    "js/jquery.nestable/jquery.nestable.js",
-    "js/bootstrap.switch/bootstrap-switch.min.js",
-    "js/bootstrap.datetimepicker/js/bootstrap-datetimepicker.min.js",
-    "js/jquery.select2/select2.min.js",
-    "js/skycons/skycons.js",
-    "js/bootstrap.slider/js/bootstrap-slider.js",
-    "js/intro.js/intro.js",
 ))?>
 <!--<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>-->
   <script type="text/javascript">
@@ -58,13 +37,17 @@
               if(data.indexOf('{"result":{"msg"') == 0){
                   data = $.parseJSON(data);
                   console.log(data.result);
-                  alert(JSON.stringify(data.result));
+                  //alert(JSON.stringify(data.result));
               }else{
                 $("#pcont").html(data);
               }
           });
       }
       $(document).ready(function(){
+          $(".sub-menu a").click(function(){
+              $(".sub-menu li").removeClass("active");
+              $(this).parent().addClass("active");
+          });
         $(".cl-sidebar a").click(function(){
             var href = $(this).attr("href");
             if(href == "#"){
@@ -82,12 +65,7 @@
       });
   </script>
 <?php Html::script_statics("theme/cleanzone",array(
-    "js/behaviour/voice-commands.js",
     "js/bootstrap/dist/js/bootstrap.min.js",
-    "js/jquery.flot/jquery.flot.js",
-    "js/jquery.flot/jquery.flot.pie.js",
-    "js/jquery.flot/jquery.flot.resize.js",
-    "js/jquery.flot/jquery.flot.labels.js",
 ))?>
   </body>
 </html>

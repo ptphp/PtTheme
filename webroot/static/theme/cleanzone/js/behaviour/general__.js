@@ -21,11 +21,11 @@ var App = function () {
     skycons.add($("#sun-icon")[0], Skycons.PARTLY_CLOUDY_DAY);
     skycons.play();
 
-
+  
     /*Sparklines*/
     $(".spk1").sparkline([2,4,3,6,7,5,8,9,4,2,6,8,8,9,10], { type: 'bar', width: '80px', barColor: '#4A8CF7'});
     $(".spk2").sparkline([4,6,7,7,4,3,2,1,4,4 ,5,6,5], { type: 'discrete', width: '80', lineColor: '#4A8CF7',thresholdValue: 4,thresholdColor: '#ff0000'});
-
+    
     $(".spk3").sparkline([5,6,7,9,9,5,3,2,2,4,6,7], {
     type: 'line',
     lineColor: '#258FEC',
@@ -33,7 +33,7 @@ var App = function () {
     spotColor: false,
     width: '80px',
     minSpotColor: false,
-    maxSpotColor: false,
+    maxSpotColor: false,  
     highlightSpotColor: '#1e7ac6',
     highlightLineColor: '#1e7ac6'});
 
@@ -495,9 +495,9 @@ var App = function () {
       var inp = $("input[type='text']", this);
       var msg = inp.val();
       var img = 'images/avatar1_50.jpg';
-
+        
       inp.val("");
-
+      
       var tpl = $('<div class="chat-conv" style="display:none;">' +
               '<img title="" data-toggle="tooltip" src="'+ img +'" class="c-avatar ttip" data-original-title="">' +
               '<div class="c-bubble">' +
@@ -506,10 +506,10 @@ var App = function () {
                 '<span></span>' +
               '</div>' +
             '</div>');
-
+            
       $(this).parents(".chat-wi").find(".chat-content").css("transition", "all 1s ease");
       $(this).parents(".chat-wi").find(".chat-content").append(tpl);
-
+      
       tpl.slideDown();
       //$(".nscroller").nanoScroller({ scroll: 'bottom' });
       //$(".nscroller").nanoScroller();
@@ -1326,7 +1326,7 @@ var App = function () {
           // var height = ($("#pcont").height() < $(window).height())?$(window).height():$(document).height();
           $("#cl-wrapper .menu-space").css("min-height",height);
         }else{
-
+          $("#cl-wrapper .nscroller").nanoScroller({ preventPageScrolling: true });
         }
       }
         
@@ -1362,6 +1362,7 @@ var App = function () {
           //var menuH = $("#cl-wrapper .menu-space .content").height();
           // var height = ($(document).height() < $(window).height())?$(window).height():menuH;
           //updateHeight();
+         $("#cl-wrapper .nscroller").nanoScroller({ preventPageScrolling: true });
         });
         e.preventDefault();
       });
@@ -1390,6 +1391,7 @@ var App = function () {
           var navH = $("#head-nav").height();
           var height = $(window).height() - ((button.is(":visible"))?collapseH:0) - navH;
           scroll.css("height",height);
+          $("#cl-wrapper .nscroller").nanoScroller({ preventPageScrolling: true });
         }
         
         $(window).resize(function() {
@@ -1397,7 +1399,8 @@ var App = function () {
         });    
             
         update_height();
-
+        $("#cl-wrapper .nscroller").nanoScroller({ preventPageScrolling: true });
+        
       }else{
         $(window).resize(function(){
           //updateHeight();
@@ -1509,7 +1512,8 @@ var App = function () {
       });
       
       /*Datepicker UI*/
-
+      $( ".ui-datepicker" ).datepicker();
+      
       /*Tooltips*/
       if(config.tooltip){
         $('.ttip, [data-toggle="tooltip"]').tooltip();
@@ -1520,11 +1524,69 @@ var App = function () {
         $('[data-popover="popover"]').popover();
       }
 
+      /*NanoScroller*/      
+      if(config.nanoScroller){
+        $(".nscroller").nanoScroller();     
+      }
+      
+      /*Nestable Lists*/
+      if(config.nestableLists){
+        $('.dd').nestable();
+      }
+      
+      /*Switch*/
+      if(config.bootstrapSwitch){
+        $('.switch').bootstrapSwitch();
+      }
+      
+      /*DateTime Picker*/
+      if(config.dateTime){
+        $(".datetime").datetimepicker({autoclose: true});
+      }
+      
+      /*Select2*/
+      if(config.select2){
+         $(".select2").select2({
+          width: '100%'
+         });
+      }
+      
+       /*Tags*/
+      if(config.tags){
+        $(".tags").select2({tags: 0,width: '100%'});
+      }
+      
+       /*Slider*/
+      if(config.slider){
+        $('.bslider').slider();     
+      }
+      
+      /*Input & Radio Buttons*/
+      if(jQuery().iCheck){
+        $('.icheck').iCheck({
+          checkboxClass: 'icheckbox_square-blue checkbox',
+          radioClass: 'iradio_square-blue'
+        });
+      }
+      
+      /*Bind plugins on hidden elements*/
+      if(config.hiddenElements){
+      	/*Dropdown shown event*/
+        $('.dropdown').on('shown.bs.dropdown', function () {
+          $(".nscroller").nanoScroller();
+        });
+          
+        /*Tabs refresh hidden elements*/
+        $('.nav-tabs').on('shown.bs.tab', function (e) {
+          $(".nscroller").nanoScroller();
+        });
+      }
+      
     },
       
     /*Pages Javascript Methods*/
     dashBoard: function (){
-
+      dashboard();
     },
     
     speech: function(options){

@@ -3,15 +3,15 @@ namespace Controller\Theme\Cleanzone;
 
 class Index{
 	function get(){
-        console($_GET);
 		$cat = isset($_GET['cat'])?$_GET['cat']:"index.html";
 		#$cat = strtolower(str_replace(".html", "", $cat));
 		include View('theme/cleanzone/'.$cat);
 	}
 }
 class Module{
-    function get(){
-        $name = isset($_GET['name'])?$_GET['name']:"dashboard";
+    function get($name){
+        $name = empty($name) ? "dashboard" : $name;
+        $name = rtrim($name,".html");
         include View('theme/cleanzone/module/'.$name);
     }
 }
