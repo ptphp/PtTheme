@@ -17,6 +17,6 @@ Data/*.db
 Icon?
 ehthumbs.db
 Thumbs.db
-etc/*.conf
+etc/deploy.conf
 *.ppk
 *.pyc
