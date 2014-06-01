@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>Cloud Admin | Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+<!--[if lt IE 9]>
+<?php Html::script_static("theme/cloud/js/flot/excanvas.min.js")?>
+<?php Html::script_static("theme/cloud/js/html5shiv/html5shiv.js")?>
+<?php Html::script_static("theme/cloud/js/css3-mediaqueries/css3-mediaqueries.js")?>
+<![endif]-->
+<?php Html::link_static("theme/cloud/less/my-bootstrap-theme.less","stylesheet/less")?>
+<?php Html::link_static("theme/cloud/less/themes/default.less","stylesheet/less","skin-switcher")?>
+<?php Html::link_static("theme/cloud/less/responsive.less","stylesheet/less")?>
+<?php Html::link_statics("theme/cloud",array(
+    //"less/my-bootstrap-theme.css",
+    "font-awesome/css/font-awesome.css",
+    "css/animatecss/animate.min.css",
+    "js/bootstrap-daterangepicker/daterangepicker-bs3.css",
+    "js/jquery-todo/css/styles.css",
+    "js/fullcalendar/fullcalendar.css",
+    "js/gritter/css/jquery.gritter.css",
+))?>
+</head>
+<body>
+<!-- HEADER -->
+<?php include View("theme/cloud/block/head-nav")?>
+<!--/HEADER -->
+
+<!-- PAGE -->
+<section id="page">
+<!-- SIDEBAR -->
+<?php include View("theme/cloud/block/sider-bar")?>
+<!-- /SIDEBAR -->
+    <div id="main-content">
+        <?php include View("theme/cloud/module/dashboard")?>
+    </div>
+</section>
+<!--/PAGE -->
+
+<?php Html::script_statics("theme/cloud",array(
+    "js/jquery/jquery-2.0.3.min.js",
+    "js/jquery-ui-1.10.3/ui/jquery-ui.js",
+    "bootstrap/js/alert.js",
+    "bootstrap/js/modal.js",
+    "bootstrap/js/dropdown.js",
+    "bootstrap/js/scrollspy.js",
+    "bootstrap/js/tab.js",
+    "bootstrap/js/tooltip.js",
+    "bootstrap/js/popover.js",
+    "bootstrap/js/button.js",
+    "bootstrap/js/collapse.js",
+    "bootstrap/js/carousel.js",
+    "js/lesscss/less-1.4.1.min.js",
+    "js/bootstrap-daterangepicker/moment.min.js",
+    "js/bootstrap-daterangepicker/daterangepicker.js",
+    "js/jQuery-slimScroll-1.3.0/jquery.slimscroll.min.js",
+    "js/jQuery-slimScroll-1.3.0/slimScrollHorizontal.js",
+    "js/jQuery-BlockUI/jquery.blockUI.js",
+    "js/sparklines/jquery.sparkline.js",
+    "js/jquery-easing/jquery.easing.min.js",
+    "js/easypiechart/jquery.easypiechart.min.js",
+    "js/flot/jquery.flot.js",
+    "js/flot/jquery.flot.time.js",
+    "js/flot/jquery.flot.selection.js",
+    "js/flot/jquery.flot.resize.js",
+    "js/flot/jquery.flot.pie.js",
+    "js/flot/jquery.flot.stack.js",
+    "js/flot/jquery.flot.crosshair.js",
+    "js/jquery-todo/js/paddystodolist.js",
+    "js/timeago/jquery.timeago.js",
+    "js/fullcalendar/fullcalendar.js",
+    "js/jQuery-Cookie/jquery.cookie.js",
+    "js/gritter/js/jquery.gritter.min.js",
+    "js/script.js",
+))?>
+<script>
+    function get_main_content($name){
+        var url = "/theme/cloud/module";
+        $.get(url,{"name":$name},function(data){
+            if(data.indexOf('{"result":{"msg"') == 0){
+                data = $.parseJSON(data);
+                console.log(data.result);
+                alert(JSON.stringify(data.result));
+            }else{
+                $("#main-content").html(data);
+            }
+        });
+    }
+    jQuery(document).ready(function() {
+        $("#search-bar a").click(function(){
+            var href = $(this).attr("href");
+            if(href == "#"){
+                return true;
+            }else{
+                get_main_content(href);
+                return false;
+            }
+        });
+        App.setPage("index");  //Set current page
+        App.init(); //Initialise plugins and elements
+        //get_main_content("dashboard");
+    });
+</script>
+</body>
+</html>
