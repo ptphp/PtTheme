@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>Cloud Admin | Inbox</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- STYLESHEETS --><!--[if lt IE 9]>
+    <?php Html::script_static("theme/cloud_css/js/flot/excanvas.min.js")?>
+    <?php Html::script_static("theme/cloud_css/js/html5shiv/html5shiv.js")?>
+    <?php Html::script_static("theme/cloud_css/js/css3-mediaqueries/css3-mediaqueries.js")?>
+    <![endif]-->
+
+<?php Html::link_statics("theme/cloud_css",array(
+    "css/cloud-admin.css",
+    "css/responsive.css",
+    "font-awesome/css/font-awesome.min.css",
+    "js/highlight/styles/monokai_sublime.css",
+    "js/datatables/media/css/jquery.dataTables.min.css",
+    "js/datatables/media/assets/css/datatables.min.css",
+    "js/datatables/extras/TableTools/media/css/TableTools.min.css",
+))?>
+    <?php Html::link_static("theme/cloud/css/themes/default.css","stylesheet","skin-switcher")?>
+
+</head>
+<body>
+
+<!-- HEADER -->
+<?php include View("theme/cloud_css/block/head-nav")?>
+<!--/HEADER -->
+<!-- PAGE -->
+<section id="page">
+    <!-- SIDEBAR -->
+    <?php include View("theme/cloud_css/block/sider-bar")?>
+    <!-- /SIDEBAR -->
+    <div id="main-content">
+    </div>
+    <div class="footer-tools">
+        <span class="go-top">
+            <i class="fa fa-chevron-up"></i> Top
+        </span>
+    </div>
+</section>
+
+<?php Html::script_statics("theme/cloud_css",array(
+    "js/jquery/jquery-2.0.3.min.js",
+    "js/jquery-ui-1.10.3.custom/js/jquery-ui-1.10.3.custom.min.js",
+    "bootstrap-dist/js/bootstrap.min.js",
+    "js/jQuery-Cookie/jquery.cookie.min.js",
+    "js/highlight/highlight.pack.js",
+    "js/datatables/media/js/jquery.dataTables.min.js",
+    "js/datatables/media/assets/js/datatables.min.js",
+    "js/datatables/extras/TableTools/media/js/TableTools.min.js",
+    "js/datatables/extras/TableTools/media/js/ZeroClipboard.min.js",
+    "js/ckeditor/ckeditor.js",
+    "js/bootstrap-wysiwyg/jquery.hotkeys.min.js",
+    "js/bootstrap-wysiwyg/bootstrap-wysiwyg.min.js",
+    "js/script.js",
+    "js/main.js",
+))?>
+<script>
+    jQuery(document).ready(function() {
+        App.init();
+    });
+</script>
+</body>
+</html>

@@ -11,7 +11,6 @@ class Index{
 class Module{
     function get($name){
         $name = empty($name) ? "dashboard" : $name;
-        $name = rtrim($name,".html");
         include View('theme/cleanzone/module/'.$name);
     }
 }

@@ -14,6 +14,7 @@
     "js/bootstrap/dist/css/bootstrap.css",
     "fonts/font-awesome-4/css/font-awesome.min.css",
     "js/jquery.datatables/bootstrap-adapter/css/datatables.css",
+    "js/highlight/styles/monokai_sublime.css",
     "css/style.css",
 ))?>
 </head>
@@ -23,53 +24,28 @@
 	<div id="cl-wrapper" class="fixed-menu">
         <?php include View("theme/cleanzone/block/sider-bar")?>
 		<div class="container-fluid user-select" id="pcont">
-
 		</div>
 	</div>
 <?php Html::script_statics("theme/cleanzone",array(
     "js/jquery.js",
     "js/behaviour/general.js",
+    "js/jQuery-Cookie/jquery.cookie.js",
+    "js/main.js"
 ))?>
-<!--<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>-->
   <script type="text/javascript">
-      function get_main_content($name){
-          var url = "/theme/cleanzone/module";
-          $.get(url,{"name":$name},function(data){
-              if(data.indexOf('{"result":{"msg"') == 0){
-                  data = $.parseJSON(data);
-                  console.log(data.result);
-                  //alert(JSON.stringify(data.result));
-              }else{
-                $("#pcont").html(data);
-              }
-          });
-      }
       $(document).ready(function(){
-          $(".sub-menu a").click(function(){
-              $(".sub-menu li").removeClass("active");
-              $(this).parent().addClass("active");
-          });
-        $(".cl-sidebar a").click(function(){
-            var href = $(this).attr("href");
-            if(href == "#"){
-                return true;
-            }else{
-                get_main_content(href);
-                return false;
-            }
-        });
-        //initialize the javascript
         App.init();
         App.dashBoard();
-        //introJs().setOption('showBullets', false).start();
-        get_main_content("dashboard");
       });
   </script>
 <?php Html::script_statics("theme/cleanzone",array(
     "js/bootstrap/dist/js/bootstrap.min.js",
     "js/jquery.datatables/jquery.datatables.min.js",
     "js/jquery.datatables/bootstrap-adapter/js/datatables.js",
+    "js/ckeditor/ckeditor.js",
+    "js/highlight/highlight.pack.js",
+    "js/htmlformat.js"
 ))?>
 
-  </body>
+</body>
 </html>

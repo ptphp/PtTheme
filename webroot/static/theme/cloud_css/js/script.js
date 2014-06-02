@@ -2465,10 +2465,10 @@ var App = function () {
 	/*-----------------------------------------------------------------------------------*/
 	var handleBackstretch = function () {
 		 $.backstretch([
-		"img/login/1.jpg"
-		, "img/login/2.jpg"
-		, "img/login/3.jpg"
-		, "img/login/4.jpg"
+		"/static/theme/cloud_css/img/login/1.jpg"
+		, "/static/theme/cloud_css/img/login/2.jpg"
+		, "/static/theme/cloud_css/img/login/3.jpg"
+		, "/static/theme/cloud_css/img/login/4.jpg"
 		], {duration: 3000, fade: 750});
 	}
 	/*-----------------------------------------------------------------------------------*/

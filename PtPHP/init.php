@@ -1,4 +1,4 @@
-<?php
+php
 defined("PATH_PTPHP") or define("PATH_PTPHP", __DIR__);
 defined("PATH_APP") or define("PATH_APP", realpath("./../App"));
 $config = array();

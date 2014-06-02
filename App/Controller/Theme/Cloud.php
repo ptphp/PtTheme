@@ -11,9 +11,22 @@ class Css{
         include View('theme/cloud_css/index.html');
     }
 }
-class Module{
+class login{
     function get(){
-        $name = isset($_GET['name'])?$_GET['name']:"index";
+        include View('theme/cloud_css/login.html');
+    }
+}
+
+class Module{
+    function get($name){
+        $name = empty($name) ? "dashboard" : $name;
         include View('theme/cloud/module/'.$name);
     }
 }
+class Cssmodule{
+    function get($name){
+        $name = empty($name) ? "dashboard" : $name;
+        include View('theme/cloud_css/module/'.str_replace("#","",$name));
+    }
+}
+
